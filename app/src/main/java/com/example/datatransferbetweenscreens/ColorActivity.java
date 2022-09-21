@@ -5,18 +5,24 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ColorActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnRed, btnGreen, btnBlue;
+    TextView tvColorText;
     final int REQUEST_CODE_COLOR = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
+        tvColorText = (TextView)findViewById(R.id.tvColorText);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("text");
+        tvColorText.setText(name);
 
         btnRed = (Button)findViewById(R.id.btnRed);
         btnGreen = (Button)findViewById(R.id.btnGreen);

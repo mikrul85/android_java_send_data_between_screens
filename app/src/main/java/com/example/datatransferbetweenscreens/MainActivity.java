@@ -48,10 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btnColor:
                 intent = new Intent(this, ColorActivity.class);
+                intent.putExtra("text", "Change color");
                 someActivityResultLauncher.launch(intent);
                 break;
             case R.id.btnAlign:
                 intent = new Intent(this, AlignActivity.class);
+                intent.putExtra("text", "Change align");
                 someActivityResultLauncher.launch(intent);
                 break;
         }
